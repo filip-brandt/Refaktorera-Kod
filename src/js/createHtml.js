@@ -8,7 +8,6 @@ let i = 0;
 export async function createHtml (){
     const podCasts = await getPodcasts ();
     podCasts.programs.forEach((podcast) => {
-    i++
     const innerArticle = createInnerArticle();
 
 createImg();
@@ -18,6 +17,8 @@ createImg();
     createHeader();
     createP();
     createLink();
+
+    i++;
 
     function createInnerArticle() {
         const innerArticle = document.createElement('article');
