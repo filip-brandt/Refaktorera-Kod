@@ -1,4 +1,4 @@
-import {getPodcasts} from './api'
+import {getPodcasts} from './api.ts'
 
 
 const podCastContainer = document.querySelector('.section__podlist-pods');
