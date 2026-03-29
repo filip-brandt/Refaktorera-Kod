@@ -11,68 +11,69 @@ interface IPodcastResponse {
     programs: IPodcast[];
 }
 
-const podCastContainer = document.querySelector('.section__podlist-pods');
+const podcastContainer = document.querySelector('.section__podlist-pods');
+
+function createPodcastArticle(): HTMLElement {
+    const podcastArticle = document.createElement('article');
+    podcastArticle.setAttribute('class', 'section__article-inner');
+    return podcastArticle;
+}
+
+function createPodcastTextContainer(): HTMLDivElement {
+    const textContainer = document.createElement('div');
+    textContainer.setAttribute('class', 'section__article-text');
+    return textContainer;
+}
+
+function createPodcastImage(podcast: IPodcast): HTMLImageElement {
+    const imageElement = document.createElement('img');
+    imageElement.setAttribute('src', podcast.socialimage);
+    imageElement.setAttribute('alt', `programbild för ${podcast.name}`);
+    imageElement.setAttribute('width', '100');
+    imageElement.setAttribute('height', '100');
+    return imageElement;
+}
+
+function createPodcastTitle(podcast: IPodcast): HTMLHeadingElement {
+    const titleElement = document.createElement('h2');
+    titleElement.textContent = podcast.name;
+    return titleElement;
+}
+
+function createPodcastDescription(podcast: IPodcast): HTMLParagraphElement {
+    const descriptionElement = document.createElement('p');
+    descriptionElement.textContent = podcast.description;
+    return descriptionElement;
+}
+
+function createPodcastLink(podcast: IPodcast): HTMLAnchorElement {
+    const linkElement = document.createElement('a');
+    linkElement.setAttribute('href', podcast.programurl);
+    linkElement.textContent = 'Lyssna här';
+    return linkElement;
+}
+
+function createPodcastCard(podcast: IPodcast): HTMLElement {
+    const podcastArticle = createPodcastArticle();
+    const textContainer = createPodcastTextContainer();
+
+    podcastArticle.appendChild(createPodcastImage(podcast));
+    textContainer.appendChild(createPodcastTitle(podcast));
+    textContainer.appendChild(createPodcastDescription(podcast));
+    textContainer.appendChild(createPodcastLink(podcast));
+    podcastArticle.appendChild(textContainer);
+
+    return podcastArticle;
+}
 
 export async function createHtml (){
-    if (!podCastContainer) return;
+    if (!podcastContainer) return;
 
-    const podCasts: IPodcastResponse = await getPodcasts ();
-    podCasts.programs.forEach((_, i) => {
-    const innerArticle = createInnerArticle();
-
-createImg();
-
-    const textDiv = createTextDiv();
-
-    createHeader();
-    createP();
-    createLink();
-
-    function createInnerArticle() {
-        const innerArticle = document.createElement('article');
-        innerArticle.setAttribute('class', 'section__article-inner');
-        podCastContainer?.appendChild(innerArticle);
-        return innerArticle;
-    }
-
-    function createTextDiv() {
-        const textDiv = document.createElement('div');
-        textDiv.setAttribute('class', 'section__article-text');
-        innerArticle.appendChild(textDiv);
-        return textDiv;
-    }
-
-    function createLink (){
-        const linkPlacement = document.createElement('a');
-        const linkText = document.createTextNode('Lyssna här');
-        linkPlacement.setAttribute('href', podCasts.programs[i].programurl);
-        linkPlacement.appendChild(linkText);
-        textDiv.appendChild(linkPlacement)
-    }
-    function createImg() {
-        const imgPlacement = document.createElement('IMG');
-        imgPlacement.setAttribute('src', podCasts.programs[i].socialimage);
-        imgPlacement.setAttribute('alt', `programbild för ${podCasts.programs[i].name}`);
-        imgPlacement.setAttribute('width', '100');
-        imgPlacement.setAttribute('height', '100')
-        innerArticle.appendChild(imgPlacement);
-    }
-
-    function createP() {
-    const descPlacement = document.createElement('p');
-    const desc = document.createTextNode(podCasts.programs[i].description);
-    descPlacement.appendChild(desc);
-    textDiv.appendChild(descPlacement);
-}
-
-function createHeader() {
-    const headerPlacement = document.createElement('h2');
-    const programName = document.createTextNode(podCasts.programs[i].name);
-    headerPlacement.appendChild(programName);
-    textDiv.appendChild(headerPlacement);
-}
-    
-})
+    const podcastResponse: IPodcastResponse = await getPodcasts();
+    podcastResponse.programs.forEach((podcast) => {
+        const podcastCard = createPodcastCard(podcast);
+        podcastContainer.appendChild(podcastCard);
+    });
 }
 
 export default createHtml
