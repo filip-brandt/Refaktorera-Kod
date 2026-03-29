@@ -13,13 +13,11 @@ interface IPodcastResponse {
 
 const podCastContainer = document.querySelector('.section__podlist-pods');
 
-let i = 0;
-
 export async function createHtml (){
     if (!podCastContainer) return;
 
     const podCasts: IPodcastResponse = await getPodcasts ();
-    podCasts.programs.forEach(() => {
+    podCasts.programs.forEach((_, i) => {
     const innerArticle = createInnerArticle();
 
 createImg();
@@ -29,8 +27,6 @@ createImg();
     createHeader();
     createP();
     createLink();
-
-    i++;
 
     function createInnerArticle() {
         const innerArticle = document.createElement('article');
