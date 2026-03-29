@@ -35,9 +35,8 @@ createImg();
     function createInnerArticle() {
         const innerArticle = document.createElement('article');
         innerArticle.setAttribute('class', 'section__article-inner');
-            innerArticle.setAttribute('tabindex', '1')
-            podCastContainer?.appendChild(innerArticle);
-            return innerArticle;
+        podCastContainer?.appendChild(innerArticle);
+        return innerArticle;
     }
 
     function createTextDiv() {
@@ -51,7 +50,6 @@ createImg();
         const linkPlacement = document.createElement('a');
         const linkText = document.createTextNode('Lyssna här');
         linkPlacement.setAttribute('href', podCasts.programs[i].programurl);
-        linkPlacement.setAttribute('tabindex', '1')
         linkPlacement.appendChild(linkText);
         textDiv.appendChild(linkPlacement)
     }
