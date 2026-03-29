@@ -58,6 +58,7 @@ createImg();
     function createImg() {
         const imgPlacement = document.createElement('IMG');
         imgPlacement.setAttribute('src', podCasts.programs[i].socialimage);
+        imgPlacement.setAttribute('alt', `programbild för ${podCasts.programs[i].name}`);
         imgPlacement.setAttribute('width', '100');
         imgPlacement.setAttribute('height', '100')
         innerArticle.appendChild(imgPlacement);
