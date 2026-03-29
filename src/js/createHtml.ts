@@ -1,13 +1,25 @@
 import {getPodcasts} from './api.ts'
 
+interface IPodcast {
+    name: string;
+    description: string;
+    programurl: string;
+    socialimage: string;
+}
+
+interface IPodcastResponse {
+    programs: IPodcast[];
+}
 
 const podCastContainer = document.querySelector('.section__podlist-pods');
 
 let i = 0;
 
 export async function createHtml (){
-    const podCasts = await getPodcasts ();
-    podCasts.programs.forEach((podcast) => {
+    if (!podCastContainer) return;
+
+    const podCasts: IPodcastResponse = await getPodcasts ();
+    podCasts.programs.forEach(() => {
     const innerArticle = createInnerArticle();
 
 createImg();
@@ -24,7 +36,7 @@ createImg();
         const innerArticle = document.createElement('article');
         innerArticle.setAttribute('class', 'section__article-inner');
             innerArticle.setAttribute('tabindex', '1')
-            podCastContainer.appendChild(innerArticle);
+            podCastContainer?.appendChild(innerArticle);
             return innerArticle;
     }
 
