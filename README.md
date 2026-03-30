@@ -14,7 +14,7 @@ G
 - [x] Refaktorera funktioner
 - [x] Eliminera onödig kod
 - [x] Rensa bort kod som inte ska sättas
-- [ ] Infoga skärmdumpar på commit-meddelanden i README-filen
+- [x] Infoga skärmdumpar på commit-meddelanden i README-filen
 - [ ] Infoga skärmdumpar på branches i README-filen
   
 VG
@@ -82,3 +82,9 @@ Det innebär att vissa kodkvalitetsproblem visas som varningar i stället för a
 ### HTML Validering
 
 <img width="1699" height="869" alt="html-valideringsresultat som visar noll fel" src="https://github.com/user-attachments/assets/84127081-6830-4e2f-a2fb-355435d03327" />
+
+### Commit Historik
+<img width="1710" height="950" alt="commit historik lista del 1 av 4" src="https://github.com/user-attachments/assets/5bb86a0f-d243-4907-b184-94282429bd56" />
+<img width="1710" height="952" alt="commit historik lista del 2 av 4" src="https://github.com/user-attachments/assets/e6823c94-c7ca-4779-8869-f0aef5bfaed5" />
+<img width="1710" height="914" alt="commit historik lista del 3 av 4" src="https://github.com/user-attachments/assets/45175935-ea84-478a-bf38-8229b25852f6" />
+<img width="1710" height="681" alt="commit historik lista del 4 av 4" src="https://github.com/user-attachments/assets/3841a317-83f6-4a4b-98d9-0bc663b70623" />
