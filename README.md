@@ -8,7 +8,7 @@ G
 - [x] Mobilvyn
 - [x] Språk
 - [x] Rensa loggning
-- [ ] Dokumentation
+- [x] Dokumentation
 - [x] Tillgänglighet (bilder)
 - [x] Tillgänglighet (HTML-kod)
 - [x] Refaktorera funktioner
@@ -29,7 +29,30 @@ VG
 - [ ] Enhetlig syntax i CSS:en
 - [ ] Publicera sidan på GitHub pages
 
-## Kodstandard och Kvalitet (ESLint)
+## SR Humorprogram - Podcast explorer
+
+En modern webbapplikation som hämtar och presenterar humorprogram från Sveriges Radios öppna API. Användaren kan enkelt bläddra bland programmen, läsa beskrivningar och navigera direkt till lyssningssidan.  
+
+<img width="1705" height="949" alt="webbsidans startsida med ett rutnät av programkort för SR:s humorprogram." src="https://github.com/user-attachments/assets/cdf8e5a0-9113-4d94-a756-642fd7a5a8dd" />
+
+## Tekniker och Verktyg
+
+[![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)](#)
+[![Sass](https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](#)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff)](#)
+[![ESLint](https://img.shields.io/badge/ESLint-3A33D1?logo=eslint)](#)
+[![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff)](#)
+
+### Kom igång
+
+Följ dessa steg för att köra projektet lokalt på din dator:
+
+* **Klona projektet:** Kör `git clone https://github.com/Medieinstitutet/fed25d-arbetsmetodik-inl-1-filip-brandt` för att klona repot till din text editor.
+* **Installera program** Kör `npm install` för att installera programmen som krävs för att projektet ska fungera.
+* **Starta projektet** Kör `npm run dev` för att starta projektet i utvecklingsmiljön.
+
+### Kodstandard och Kvalitet (ESLint)
 
 För att säkerställa en enhetlig kodstandard använder projektet **ESLint** tillsammans med **typescript-eslint**.
 
@@ -56,6 +79,6 @@ Projektet använder flat config i `eslint.config.js` med:
 
 Det innebär att vissa kodkvalitetsproblem visas som varningar i stället för att stoppa arbetsflödet.
 
-## HTML Validering
+### HTML Validering
 
-<img width="1699" height="869" alt="html valideringsresultat" src="https://github.com/user-attachments/assets/84127081-6830-4e2f-a2fb-355435d03327" />
+<img width="1699" height="869" alt="html-valideringsresultat som visar noll fel" src="https://github.com/user-attachments/assets/84127081-6830-4e2f-a2fb-355435d03327" />
