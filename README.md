@@ -10,7 +10,7 @@ G
 - [x] Rensa loggning
 - [ ] Dokumentation
 - [x] Tillgänglighet (bilder)
-- [ ] Tillgänglighet (HTML-kod)
+- [x] Tillgänglighet (HTML-kod)
 - [x] Refaktorera funktioner
 - [x] Eliminera onödig kod
 - [x] Rensa bort kod som inte ska sättas
@@ -56,3 +56,6 @@ Projektet använder flat config i `eslint.config.js` med:
 
 Det innebär att vissa kodkvalitetsproblem visas som varningar i stället för att stoppa arbetsflödet.
 
+## HTML Validering
+
+<img width="1699" height="869" alt="html valideringsresultat" src="https://github.com/user-attachments/assets/84127081-6830-4e2f-a2fb-355435d03327" />
